@@ -1,0 +1,19 @@
+├── prisma/
+│   └── schema.prisma         # Base de données
+├── src/
+│   ├── app/
+│   │   ├── api/              # Routes Backend (réservation, boutique)
+│   │   ├── prestations/      # Page /prestations
+│   │   ├── reservation/      # Page /reservation
+│   │   ├── boutique/         # Page /boutique
+│   │   ├── a-propos/         # Page /a-propos
+│   │   ├── contact/          # Page /contact
+│   │   ├── layout.tsx        # Layout principal (Menu, Footer, WhatsApp)
+│   │   └── page.tsx          # Page d'accueil
+│   ├── components/           # Composants réutilisables
+│   │   ├── ui/               # Boutons, inputs, cartes
+│   │   ├── ServiceCard.tsx
+│   │   ├── FloatingWhatsApp.tsx
+│   │   └── Navbar.tsx
+│   └── lib/                  # Utilitaires (Prisma client, formatage)
+└── tailwind.config.ts        # Configuration des couleurs
