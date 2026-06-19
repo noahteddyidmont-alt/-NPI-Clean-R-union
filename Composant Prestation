@@ -1,0 +1,38 @@
+// src/components/ServiceCard.tsx
+import Image from 'next/image';
+import Link from 'next/link';
+
+interface ServiceProps {
+  name: string;
+  description: string;
+  price: number;
+  duration: string;
+  imageUrl: string;
+}
+
+export default function ServiceCard({ name, description, price, duration, imageUrl }: ServiceProps) {
+  return (
+    <div className="bg-brand-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden border border-brand-gray/50 flex flex-col h-full">
+      <div className="relative h-48 w-full bg-brand-blue">
+        {/* Remplacer par un vrai composant Image Next.js en production */}
+        <div className="absolute inset-0 flex items-center justify-center text-brand-dark/40">
+          [Image : {imageUrl}]
+        </div>
+      </div>
+      <div className="p-8 flex flex-col flex-grow">
+        <h3 className="text-xl font-bold text-brand-dark mb-3">{name}</h3>
+        <p className="text-gray-600 mb-6 flex-grow leading-relaxed">{description}</p>
+        <div className="flex justify-between items-center mb-6 text-sm font-medium">
+          <span className="bg-brand-turquoise text-teal-800 px-3 py-1 rounded-full">{duration}</span>
+          <span className="text-lg font-bold text-brand-dark">À partir de {price} €</span>
+        </div>
+        <Link 
+          href="/reservation" 
+          className="w-full text-center bg-brand-dark text-brand-white py-3 rounded-lg hover:bg-black transition-colors font-semibold"
+        >
+          Réserver
+        </Link>
+      </div>
+    </div>
+  );
+}
